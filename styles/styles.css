@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 200vh; /* This allows for scrolling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.featured-clients {
+  position: absolute;
+  top: 20px;
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+  color: #333;
+}
+
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centering the text vertically */
+  align-items: center;
+  position: absolute; /* Position absolute to allow scrolling */
+  top: 50%; /* Start from the center of the viewport */
+  transform: translateY(-50%); /* Center the container vertically */
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.scroll-text {
+  font-size: 3rem;
+  opacity: 0.2;
+  transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+  width: 100%; /* Make each text occupy full width */
+  text-align: center; /* Center the text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.scroll-text.active {
+  transform: scale(1.5);
+  opacity: 1;
+  color: black;
+}
+
+.scroll-container .scroll-text {
+  margin: 20px 0;
+}
